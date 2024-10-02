@@ -42,4 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // ユーザーが持つ投稿（1対多）
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }
