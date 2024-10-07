@@ -3,24 +3,41 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('戦略画面') }}
         </h2>
+        <!-- ヘッダーメニュー -->
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#">[戦術]</a></li>
+                <li><a href="#">[プリセット]</a></li>
+                <li><a href="#">[コミュニティ]</a></li>
+                <li><a href="#">[ログイン]</a></li>
+            </ul>
+        </nav>
     </x-slot>
 
-<!DOCTYPE html>
-<html lang="ja">
+    <!DOCTYPE html>
+    <html lang="ja">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>フォーメーション</title>
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> <!--Publicのstyle.cssを読み込み-->
     </head>
     <body>
-        <h1>（仮）操作画面</h1>
-        <div class='posts'>
-            <div class='post'>
-                <h2 class='title'>Title</h2>
-                <p class='body'>[]</p>
+        <div class="container">
+            <!-- サッカーコート -->
+            <div class="soccer-field">
+                <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
+            </div>
+
+            <!-- 交代選手スペース -->
+            <div class="substitute-area">
+                <div class="player">選手1</div>
+                <div class="player">選手2</div>
+                <div class="player">選手3</div>
+                <div class="player">選手4</div>
             </div>
         </div>
     </body>
-</html>
+    </html>
 </x-app-layout>
