@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('player_sequence', function (Blueprint $table) {
             $table->foreignId('player_id')->constrained('players')->onDelete('cascade'); // Foreign Key
             $table->foreignId('sequence_id')->constrained('sequences')->onDelete('cascade'); // Foreign Key
-            $table->timestamp('timestamp')->nullable();
+            $table->timestamps();
             $table->primary(['player_id', 'sequence_id']);
             $table->softDeletes();
         });

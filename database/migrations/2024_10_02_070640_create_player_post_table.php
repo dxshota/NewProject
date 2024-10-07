@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('player_post', function (Blueprint $table) { //中間テーブル
             $table->foreignId('post_id')->constrained('posts')->onDelete('cascade'); // Foreign Key
             $table->foreignId('player_id')->constrained('players')->onDelete('cascade'); // Foreign Key
-            $table->timestamp('timestamp')->nullable();
+            $table->timestamps();
             $table->primary(['post_id', 'player_id']);
             $table->softDeletes();
         });
