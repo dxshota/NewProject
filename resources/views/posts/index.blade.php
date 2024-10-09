@@ -14,7 +14,7 @@
         </nav>
     </x-slot>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="ja">
     <head>
         <meta charset="utf-8">
@@ -27,7 +27,19 @@
         <div class="container">
             <!-- サッカーコート -->
             <div class="soccer-field">
-                <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
+                <!-- 中央円 -->
+                <div class="center-circle"></div>
+                <div class="center-dot"></div>
+
+                <!-- 左側のゴールエリアとペナルティエリア -->
+                <div class="goal-area goal-area-left"></div>
+                <div class="penalty-area penalty-area-left"></div>
+
+                <!-- 右側のゴールエリアとペナルティエリア -->
+                <div class="goal-area goal-area-right"></div>
+                <div class="penalty-area penalty-area-right"></div>
+
+            <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
             </div>
 
             <!-- 交代選手スペース -->
@@ -39,5 +51,5 @@
             </div>
         </div>
     </body>
-    </html>
+</html>
 </x-app-layout>
