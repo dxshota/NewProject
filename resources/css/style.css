@@ -12,7 +12,19 @@ body {
     margin-top: 20px;
 }
 
-.soccer-field {
+.draggable { /*仮オブジェクト*/
+    width: 25%;
+    min-height: 6.5em;
+    margin: 1rem 0 0 1rem;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .soccer-field {
     width: 70%; /* 横幅を画面の70%に設定 */
     height: 50vw; /* 高さを画面の幅の50%に設定（縦長の長方形を作るため） */
     background-color: #86db89; /*コートカラー*/
@@ -153,3 +165,4 @@ body {
     font-size: 35px;
     padding: 50px;
 }
+

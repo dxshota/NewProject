@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('戦略画面') }}
+            <!-- {{ __('戦略画面') }} -->
         </h2>
         <!-- ヘッダーメニュー -->
         <nav class="header-nav">
@@ -14,16 +14,7 @@
         </nav>
     </x-slot>
 
-<!DOCTYPE html>
-    <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>フォーメーション</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"> <!--Publicのstyle.cssを読み込み-->
-    </head>
-    <body>
+
         <div class="container">
             <!-- サッカーコート -->
             <div class="soccer-field">
@@ -44,12 +35,13 @@
 
             <!-- 交代選手スペース -->
             <div class="substitute-area">
-                <div class="player">選手1</div>
+                <div class="draggable">選手1</div>
                 <div class="player">選手2</div>
                 <div class="player">選手3</div>
                 <div class="player">選手4</div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="draggable"> Draggable Element </div>
+
+        <!--<script src="./drag.js"></script>-->    
 </x-app-layout>

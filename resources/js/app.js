@@ -1,3 +1,4 @@
+import "./drag.js";
 import './bootstrap';
 
 import Alpine from 'alpinejs';
