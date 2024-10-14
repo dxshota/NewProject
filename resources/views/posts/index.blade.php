@@ -13,9 +13,8 @@
             </ul>
         </nav>
     </x-slot>
-
-
-        <div class="container">
+        
+    <div class="container">
             <!-- サッカーコート -->
             <div class="soccer-field">
                 <!-- 中央円 -->
@@ -31,17 +30,40 @@
                 <div class="penalty-area penalty-area-right"></div>
 
             <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
+            <div class="player" data-id="1" style="left: 100px; top: 100px;">
+                    <div class="player-circle" style="background-color: lightblue;">
+                        10
+                    </div>
+                    <div class="player-info">
+                        <select>
+                            <option value="FW">FW</option>
+                            <option value="MF">MF</option>
+                            <option value="DF">DF</option>
+                            <option value="GK">GK</option>
+                        </select>
+                        <span>山田 太郎</span>
+                    </div>
+                </div>
             </div>
 
             <!-- 交代選手スペース -->
             <div class="substitute-area">
-                <div class="draggable">選手1</div>
-                <div class="player">選手2</div>
-                <div class="player">選手3</div>
-                <div class="player">選手4</div>
+            <div class="player" data-id="2">
+                <div class="player-circle" style="background-color: lightcoral;">
+                        11
+                    </div>
+                    <div class="player-info">
+                        <select>
+                            <option value="FW">FW</option>
+                            <option value="MF">MF</option>
+                            <option value="DF">DF</option>
+                            <option value="GK">GK</option>
+                        </select>
+                        <span>田中 一郎</span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="draggable"> Draggable Element </div>
-
+    </div>
+        
         <!--<script src="./drag.js"></script>-->    
 </x-app-layout>
