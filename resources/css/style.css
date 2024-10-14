@@ -3,41 +3,36 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* 縦方向中央配置のために画面全体の高さを設定 */
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px; /* コンテナの最大幅を設定 */
+    margin: 0 auto; /* 横方向中央揃え */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.draggable { /*仮オブジェクト*/
-    width: 25%;
-    min-height: 6.5em;
-    margin: 1rem 0 0 1rem;
-    background-color: #29e;
-    color: white;
-    border-radius: 0.75em;
-    padding: 4%;
-    touch-action: none;
-    user-select: none;
-  }
-
-  .soccer-field {
-    width: 70%; /* 横幅を画面の70%に設定 */
-    height: 50vw; /* 高さを画面の幅の50%に設定（縦長の長方形を作るため） */
-    background-color: #86db89; /*コートカラー*/
+.soccer-field {
+    width: 70vw;
+    aspect-ratio: 3 / 2; /* 横2:縦1のアスペクト比を維持 */
+    background-color: #86db89; /* コートカラー */
     position: relative;
-    padding-bottom: 45%; /* 横長フィールド */
     border: 5px solid white;
     border-radius: 10px;
-    background: repeating-linear-gradient(/* ストライプパターン */
-                    90deg, 
-                    #4CAF50, #4CAF50 10%, 
-                    #3B9142 10%, #3B9142 20%
-                ); 
-    margin: 0px 0;
+    background: repeating-linear-gradient(
+        90deg, 
+        #4CAF50, #4CAF50 10%, 
+        #3B9142 10%, #3B9142 20%
+    );
+    margin: 0 auto; /* フィールドを横方向中央に揃える */
 }
 
 /* 中央円 */
@@ -120,7 +115,8 @@ body {
 
 /* 交代選手スペース */
 .substitute-area { 
-    width: 70%;
+    width: 100%;
+    max-width: 700px;
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
@@ -128,16 +124,60 @@ body {
     border: 2px dashed #ccc;
 }
 
+/* プレイヤーデザイン */
 .player {
-    width: 60px;
-    height: 60px;
-    background-color: #FFD700;
+    position: absolute;
+    cursor: grab;
+    text-align: center; /*選手データとアイコンの位置関係*/
+}
+
+.player-circle {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
     font-weight: bold;
-    cursor: grab;
+    position: absolute;/* アイコンを絶対位置にする */
+    top: -20px; /* プレイヤーデータの上に移動 */
+    left: 50%;
+    transform: translateX(-50%); /* アイコンを中央に */
+    z-index: 1;/* アイコンを前面に */
+}
+
+.player-info {
+    display: flex;
+    flex-direction: row; /* データ横方向に並べる */
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0e0d0d; /* 枠線を追加 */
+    padding: 2px 4px;
+    position: relative; 
+    margin-top: 30px; /* 選手名を選手アイコンの下に */
+    background-color: rgba(255, 255, 255, 0.8); /* 背景を白で透明度80% */
+    z-index: 0;
+}
+
+.player-info select,
+.player-info span {
+    border-right: 1px solid black; /* ポジションと選手名の間に線を追加 */
+    padding: 0 5px;
+    margin: 0;
+}
+
+.player-info span {
+    border-right: none; /* 最後の要素に線を表示しない */
+}
+
+/*選手色をそれぞれ設定可能に*/
+.player[data-id="1"] .player-circle {
+    background-color: lightblue;
+}
+
+.player[data-id="2"] .player-circle {
+    background-color: lightcoral;
 }
 
 /*ヘッダー*/
