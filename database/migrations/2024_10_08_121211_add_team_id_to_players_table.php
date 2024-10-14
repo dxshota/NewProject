@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('players', function (Blueprint $table) {
-            $table->enum('team_id', ['1', '2']);
+            if (!Schema::hasColumn('players', 'team_id')) {
+                $table->enum('team_id', ['1', '2'])->nullable(false);
+            }
         });
     }
 
