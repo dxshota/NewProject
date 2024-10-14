@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             
-            $table->string('player_name');
+            $table->string('player_name')->nullable();
             $table->integer('player_position_x');
             $table->integer('player_position_y');
-            $table->enum('player_role', ['FW', 'CF', 'ST', 'WG', 'MF', 'CMF', 'DMF', 'OMF', 'SH', 'IH', 'ANC', 'DF', 'CB', 'SB', 'WB', 'GK']);
-            $table->integer('player_number');
+            $table->integer('player_number')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

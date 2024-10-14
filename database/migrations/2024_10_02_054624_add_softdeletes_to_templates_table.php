@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('templates', function (Blueprint $table) {
+            Schema::table('templates', function (Blueprint $table) {
+                if (!Schema::hasColumn('templates', 'deleted_at')) {
+                    $table->timestamp('deleted_at')->nullable();
+                }
+            });
             
-            $table->softDeletes();
+            
         });
     }
 
