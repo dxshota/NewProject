@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('template_id')->constrained()->onDelete('cascade'); //リレーションtemplate
             $table->integer('player_position_x');
             $table->integer('player_position_y');
-            $table->enum('player_role', ['FW', 'CF', 'ST', 'WG', 'MF', 'CMF', 'DMF', 'OMF', 'SH', 'IH', 'ANC', 'DF', 'CB', 'SB', 'WB', 'GK']);
             $table->timestamps();
             $table->softDeletes();
         });
