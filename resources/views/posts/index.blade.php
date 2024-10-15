@@ -29,6 +29,10 @@
                 <div class="goal-area goal-area-right"></div>
                 <div class="penalty-area penalty-area-right"></div>
 
+                <!-- ドラッグ中の選手の座標を表示するエリア 開発用-->
+                <div class="coordinates-display" id="coordinatesDisplay">
+                    X: 0, Y: 0
+                </div>
             <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
             <div class="player" data-id="1" style="left: 100px; top: 100px;">
                     <div class="player-circle" style="background-color: lightblue;">
