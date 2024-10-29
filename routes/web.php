@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PlayerPositionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){ //認証なしユーザーの制限
     Route::get('/', 'index')->name('index');
+    Route::post('/save-template', [PostController::class, 'storeTemplate'])->name('save.template');
     /*Route::post('/posts', 'store')->name('store');
     Route::get('/posts/create', 'create')->name('create');
     Route::get('/posts/{post}', 'show')->name('show');
