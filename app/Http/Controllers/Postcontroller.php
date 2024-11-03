@@ -20,24 +20,24 @@ class Postcontroller extends Controller
     public function storeTemplate(Request $request)
     {
         // 保存ボタンバリデーション
-        $request->validate([
+        /*$request->validate([
             'title' => 'required|string|max:255',
             'positions' => 'required|array',
             'positions.*.player_id' => 'required',
             'positions.*.player_position_x' => 'required|numeric',
             'positions.*.player_position_y' => 'required|numeric',
-        ]);
+        ]);*/
 
         // タイトルをtemplatesテーブルに保存
         $template = new Template();
-        $template->title = $request->input('title');
+        $template->formation_template_name = $request->title;
         $template->save();
 
         // 選手座標をPosition_player_templatesテーブルに保存
-        foreach ($request->input('positions') as $position) {
+        foreach ($request->positions as $position) {
             $playerPosition = new Position_Player_Template();
             $playerPosition->template_id = $template->id;
-            $playerPosition->player_id = $position['player_id'];
+            $playerPosition->team_id = $position['team_id'];
             $playerPosition->player_position_x = $position['player_position_x'];
             $playerPosition->player_position_y = $position['player_position_y'];
             $playerPosition->save();

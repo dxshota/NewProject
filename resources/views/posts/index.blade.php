@@ -54,7 +54,7 @@
         
             
             <!-- チーム１ -->
-            <div class="player" style="transform: translate(-135px, -50px);">
+            <div class="player" data-id="1" data-x="" data-y="" style="transform: translate(-135px, -50px);">
                 <div class="player-circle" data-id="team1-player-1">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-135px, 90px);">
+            <div class="player" data-id="1" data-x="-135" data-y="90" style="transform: translate(-135px, 90px);">
                 <div class="player-circle" data-id="team1-player-2">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-285px, -50px);">
+            <div class="player" data-id="1" data-x="-285" data-y="-50" style="transform: translate(-285px, -50px);">
                 <div class="player-circle" data-id="team1-player-3">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-285px, 90px);">
+            <div class="player" data-id="1" data-x="-285" data-y="90" style="transform: translate(-285px, 90px);">
                 <div class="player-circle" data-id="team1-player-4">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-435px, -50px);">
+            <div class="player" data-id="1" data-x="-435" data-y="-50" style="transform: translate(-435px, -50px);">
                 <div class="player-circle" data-id="team1-player-5">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -104,7 +104,7 @@
                 </div>
             </div>
             
-            <div class="player" style="transform: translate(-435px, 90px);">
+            <div class="player" data-id="1" data-x="-435" data-y="90" style="transform: translate(-435px, 90px);">
                 <div class="player-circle" data-id="team1-player-6">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -114,7 +114,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-285px, -200px);">
+            <div class="player" data-id="1" data-x="-285" data-y="-200" style="transform: translate(-285px, -200px);">
                 <div class="player-circle" data-id="team1-player-7">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-285px, 250px);">
+            <div class="player" data-id="1" data-x="-285" data-y="250" style="transform: translate(-285px, 250px);">
                 <div class="player-circle" data-id="team1-player-8">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -134,7 +134,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-435px, -200px);">
+            <div class="player" data-id="1" data-x="-435" data-y="-200" style="transform: translate(-435px, -200px);">
                 <div class="player-circle" data-id="team1-player-9">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -144,7 +144,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-435px, 250px);">
+            <div class="player" data-id="1" data-x="-435" data-y="250" style="transform: translate(-435px, 250px);">
                 <div class="player-circle" data-id="team1-player-10">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -155,7 +155,7 @@
             </div>
 
             <!-- チーム1のゴールキーパー -->
-            <div class="player" style="transform: translate(-630px, 20px);">
+            <div class="player" data-id="1" data-x="-630" data-y="20" style="transform: translate(-630px, 20px);">
                 <div class="player-circle" data-id="team1-player-GK">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -167,7 +167,7 @@
             
             
             <!-- チーム2 -->
-            <div class="player" style="transform: translate(40px, -50px);">
+            <div class="player" data-id="2" data-x="40" data-y="-50" style="transform: translate(40px, -50px);">
                 <div class="player-circle" data-id="team2-player-1">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -177,7 +177,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(40px, 90px);">
+            <div class="player" data-id="2" data-x="40" data-y="90" style="transform: translate(40px, 90px);">
                 <div class="player-circle" data-id="team2-player-2">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -187,7 +187,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(185px, -50px);">
+            <div class="player" data-id="2" data-x="185" data-y="-50" style="transform: translate(185px, -50px);">
                 <div class="player-circle" data-id="team2-player-3">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -197,7 +197,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(185px, 90px);">
+            <div class="player" data-id="2" data-x="185" data-y="90" style="transform: translate(185px, 90px);">
                 <div class="player-circle" data-id="team2-player-4">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -207,7 +207,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(340px, -50px);">
+            <div class="player" data-id="2" data-x="340" data-y="-50" style="transform: translate(340px, -50px);">
                 <div class="player-circle" data-id="team2-player-5">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -217,7 +217,7 @@
                 </div>
             </div>
             
-            <div class="player" style="transform: translate(340px, 90px);">
+            <div class="player" data-id="2" data-x="340" data-y="90" style="transform: translate(340px, 90px);">
                 <div class="player-circle" data-id="team2-player-6">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -227,7 +227,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(185px, -200px);">
+            <div class="player" data-id="2" data-x="185" data-y="-200" style="transform: translate(185px, -200px);">
                 <div class="player-circle" data-id="team2-player-7">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -237,7 +237,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(185px, 250px);">
+            <div class="player" data-id="2" data-x="185" data-y="250" style="transform: translate(185px, 250px);">
                 <div class="player-circle" data-id="team2-player-8">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -247,7 +247,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(340px, -200px);">
+            <div class="player" data-id="2" data-x="340" data-y="-200" style="transform: translate(340px, -200px);">
                 <div class="player-circle" data-id="team2-player-9">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -257,7 +257,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(340px, 250px);">
+            <div class="player" data-id="2" data-x="340" data-y="250" style="transform: translate(340px, 250px);">
                 <div class="player-circle" data-id="team2-player-10">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -268,7 +268,7 @@
             </div>
 
             <!-- チーム2のゴールキーパー -->
-            <div class="player" style="transform: translate(540px, 20px);">
+            <div class="player" data-id="2" data-x="540" data-y="20" style="transform: translate(540px, 20px);">
                 <div class="player-circle" data-id="team2-player-GK">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -281,7 +281,7 @@
         <!-- 交代選手スペース -->        
         <div class="substitute-area">
             <!--チーム１-->
-            <div class="player" style="transform: translate(-640px, 420px);">
+            <div class="player" data-id="1"data-x="-640" data-y="420" style="transform: translate(-640px, 420px);">
                 <div class="player-circle" data-id="team1-sub-1">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -291,7 +291,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-590px, 420px);">
+            <div class="player" data-id="1"data-x="-590" data-y="420" style="transform: translate(-590px, 420px);">
                 <div class="player-circle" data-id="team1-sub-2">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -301,7 +301,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-540px, 420px);">
+            <div class="player" data-id="1"data-x="-540" data-y="420" style="transform: translate(-540px, 420px);">
                 <div class="player-circle" data-id="team1-sub-3">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -311,7 +311,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-490px, 420px);">
+            <div class="player" data-id="1"data-x="-490" data-y="420" style="transform: translate(-490px, 420px);">
                 <div class="player-circle" data-id="team1-sub-4">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -321,7 +321,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-440px, 420px);">
+            <div class="player" data-id="1"data-x="-440" data-y="420" style="transform: translate(-440px, 420px);">
                 <div class="player-circle" data-id="team1-sub-5">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -331,7 +331,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-390px, 420px);">
+            <div class="player" data-id="1"data-x="-390" data-y="420" style="transform: translate(-390px, 420px);">
                 <div class="player-circle" data-id="team1-sub-6">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -341,7 +341,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-340px, 420px);">
+            <div class="player" data-id="1"data-x="-340" data-y="420" style="transform: translate(-340px, 420px);">
                 <div class="player-circle" data-id="team1-sub-7">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -351,7 +351,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-290px, 420px);">
+            <div class="player" data-id="1"data-x="-290" data-y="420" style="transform: translate(-290px, 420px);">
                 <div class="player-circle" data-id="team1-sub-8">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -361,7 +361,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-240px, 420px);">
+            <div class="player" data-id="1"data-x="-240" data-y="420" style="transform: translate(-240px, 420px);">
                 <div class="player-circle" data-id="team1-sub-GK-1">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -371,7 +371,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(-190px, 420px);">
+            <div class="player" data-id="1"data-x="-190" data-y="420" style="transform: translate(-190px, 420px);">
                 <div class="player-circle" data-id="team1-sub-GK-2">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -382,7 +382,7 @@
             </div>
 
         <!--チーム２-->
-            <div class="player" style="transform: translate(550px, 420px);">
+            <div class="player" data-id="2"data-x="550" data-y="420" style="transform: translate(550px, 420px);">
                 <div class="player-circle" data-id="team2-sub-1">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -392,7 +392,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(500px, 420px);">
+            <div class="player" data-id="2"data-x="500" data-y="420" style="transform: translate(500px, 420px);">
                 <div class="player-circle" data-id="team2-sub-2">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -402,7 +402,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(450px, 420px);">
+            <div class="player" data-id="2"data-x="450" data-y="420" style="transform: translate(450px, 420px);">
                 <div class="player-circle" data-id="team2-sub-3">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -412,7 +412,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(400px, 420px);">
+            <div class="player" data-id="2"data-x="400" data-y="420" style="transform: translate(400px, 420px);">
                 <div class="player-circle" data-id="team2-sub-4">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -422,7 +422,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(350px, 420px);">
+            <div class="player" data-id="2"data-x="350" data-y="420" style="transform: translate(350px, 420px);">
                 <div class="player-circle" data-id="team2-sub-5">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -432,7 +432,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(300px, 420px);">
+            <div class="player" data-id="2"data-x="300" data-y="420" style="transform: translate(300px, 420px);">
                 <div class="player-circle" data-id="team2-sub-6">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -442,7 +442,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(250px, 420px);">
+            <div class="player" data-id="2"data-x="250" data-y="420" style="transform: translate(250px, 420px);">
                 <div class="player-circle" data-id="team2-sub-7">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -452,7 +452,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(200px, 420px);">
+            <div class="player" data-id="2"data-x="200" data-y="420" style="transform: translate(200px, 420px);">
                 <div class="player-circle" data-id="team2-sub-8">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -462,7 +462,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(150px, 420px);">
+            <div class="player" data-id="2"data-x="150" data-y="420" style="transform: translate(150px, 420px);">
                 <div class="player-circle" data-id="team2-sub-GK-1">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
@@ -472,7 +472,7 @@
                 </div>
             </div>
 
-            <div class="player" style="transform: translate(100px, 420px);">
+            <div class="player" data-id="2"data-x="100" data-y="420" style="transform: translate(100px, 420px);">
                 <div class="player-circle" data-id="team2-sub-GK-2">
                     <input type="text" class="player-number"  placeholder="番号" readonly><!-- 背番号用テキストボックス -->
                 </div>
