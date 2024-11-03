@@ -10,7 +10,7 @@ document.getElementById('cancel-save').addEventListener('click', function() {
 });
 
 //保存ボタン押下処理
-document.getElementById('confirm-save').addEventListener('click', function() {
+document.getElementById('confirm-save').addEventListener('click',async function() {
     // タイトル欄の取得
     const titleInput = document.querySelector('#save-confirm-modal input[name="title"]');
 
@@ -26,18 +26,19 @@ document.getElementById('confirm-save').addEventListener('click', function() {
     const positions = [];
 
     players.forEach(player => {
-        // player-circle 要素から data-id を取得
-        const playerCircle = player.querySelector('.player-circle');
-        const playerId = playerCircle.getAttribute('data-id');
+        // player 要素から data-id を取得
+        const playercircle = player.querySelector('.player');
+        //const teamId = playercircle.getAttribute('data-id');
         
         // player 要素から data-x, data-y を取得
-        const playerX = player.getAttribute('data-x');
-        const playerY = player.getAttribute('data-y');
+        const playerX = player.dataset.x;
+        const playerY = player.dataset.y;
         
-        positions.push({
-            player_id: playerId,
-            player_position_x: playerX,
-            player_position_y: playerY
+        //data-id,data-x,data-yを送信
+        positions.push({ 
+            team_id: 1,
+            player_position_x: Number(playerX),
+            player_position_y: Number(playerY)
         });
     });
 
@@ -47,11 +48,13 @@ document.getElementById('confirm-save').addEventListener('click', function() {
         positions: positions
     };
 
+    console.log(data);
+
     // CSRFトークンをmetaタグから取得
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     // サーバーにPOSTリクエストを送信
-    fetch('/save-template', {
+    await fetch('/save-template', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

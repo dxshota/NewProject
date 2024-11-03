@@ -156,7 +156,7 @@ main {
     cursor: grab;
     /* デフォルトの座標指定を中央基準にする */
     text-align: center;
-    z-index: 1000;
+    z-index: 500;
 }
 
 .player:active { /*ドラッグ中のアイコン*/
