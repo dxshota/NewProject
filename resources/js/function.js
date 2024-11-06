@@ -77,3 +77,8 @@ document.getElementById('confirm-save').addEventListener('click',async function(
     });
 });
 
+//テンプレ選択時
+function selectFormation(formation) {
+    console.log("選択されたフォーメーション:", formation);
+    // フォーメーション変更のロジックをここに追加
+}
