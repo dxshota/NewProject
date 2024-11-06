@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Template;
+use App\Models\Template; //テンプレートのフォーメーション名
 use App\Models\Position_Player_Template;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -15,6 +15,16 @@ class Postcontroller extends Controller
     {
         return view('posts.index')->with(['posts' => $post->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
+    }
+
+    //テンプレート呼び出し関数
+    public function callTemplate()
+    {
+        // templatesテーブルからデータを取得
+        $formations = Template::orderBy('id', 'asc')->pluck('formation_template_name', 'id');
+
+        // データをビューに渡す
+        return view('posts.index', compact('formations'));
     }
 
     public function storeTemplate(Request $request)

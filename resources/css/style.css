@@ -261,7 +261,47 @@ main {
     padding: 50px;
 }
 
-/* 保存ボタン */
+/*テンプレ選択コンテナ*/
+.formation-container {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 300px; /* スクロールできる高さを設定 */
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    overflow-y: auto; /* 縦スクロールを可能にする */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* 他の要素の上に表示 */
+}
+
+.formation-container h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.formation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formation-item {
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.formation-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* 投稿保存ボタン */
 #save-btn {
     position: fixed;
     bottom: 10px;
