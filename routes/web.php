@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PlayerPositionController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +26,13 @@ Route::get('/dashboard', function () {
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){ //認証なしユーザーの制限
     Route::get('/', [PostController::class, 'index'])->name('index');
-    Route::get('/', [PostController::class, 'callTemplate'])->name('index');
-    Route::post('/save-template', [PostController::class, 'storeTemplate'])->name('save.template'); //座標保存関数（開発用）
-    /*Route::post('/posts', 'store')->name('store');
-    Route::get('/posts/create', 'create')->name('create');
-    Route::get('/posts/{post}', 'show')->name('show');
-    Route::put('/posts/{post}', 'update')->name('update');
-    Route::delete('/posts/{post}', 'delete')->name('delete');
-    Route::get('/posts/{post}/edit', 'edit')->name('edit');*/
+    Route::get('/', [PostController::class, 'callTemplate'])->name('index');//テンプレート欄要素表示
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+    Route::get('/get-formation-positions/{formationId}', [PostController::class, 'getFormationPositions']);//テンプレート座標適用
+    Route::post('/save-post-data', [PostController::class, 'savePostData'])->name('save-post-data'); //投稿データ保存関数
+    /*Route::post('/save-template', [PostController::class, 'saveTemplate'])->name('save.template'); //テンプレート座標保存関数（開発用）
+    
+    */
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,5 +40,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 require __DIR__.'/auth.php';

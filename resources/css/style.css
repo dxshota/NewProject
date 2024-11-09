@@ -216,22 +216,22 @@ main {
 /*選手色をそれぞれ設定可能に*/
 
 /* チーム1の選手 */
-.player-circle[data-id^="team1-player"], .player-circle[data-id^="team1-sub"] { /*アイコンの色*/
+.player-circle[data-id^="team1"] { /*アイコンの色*/
     background-color: lightblue;
 }
 
 /* チーム1のゴールキーパー */
-.player-circle[data-id="team1-player-GK"], .player-circle[data-id^="team1-sub-GK"] {
+.player-circle[data-id^="GK1"]{
     background-color: yellow;
 }
 
 /* チーム2の選手 */
-.player-circle[data-id^="team2-player"], .player-circle[data-id^="team2-sub"] {
+.player-circle[data-id^="team2"]{
     background-color: lightcoral;
 }
 
 /* チーム2のゴールキーパー */
-.player-circle[data-id="team2-player-GK"], .player-circle[data-id^="team2-sub-GK"] {
+.player-circle[data-id^="GK2"]{
     background-color: yellowgreen;
 }
 
