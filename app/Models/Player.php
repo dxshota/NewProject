@@ -17,7 +17,7 @@ class Player extends Model
     // プレイヤーが紐づく投稿（多対多）
     public function posts()
     {
-        return $this->belongsToMany(Post::class, 'post_player')->withTimestamps();
+        return $this->belongsToMany(Post::class, 'player_post')->withTimestamps(); //player_post中間テーブル
     }
     
     // プレイヤーが属するシーケンス（多対多）

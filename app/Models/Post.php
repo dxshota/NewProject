@@ -30,7 +30,7 @@ class Post extends Model
     // 投稿に紐づくプレイヤー（多対多）
     public function players()
     {
-        return $this->belongsToMany(Player::class, 'post_player')->withTimestamps();
+        return $this->belongsToMany(Player::class, 'player_post')->withTimestamps(); //player_post中間テーブル
     }
     
     // 投稿に紐づくシーケンス（1対多）
