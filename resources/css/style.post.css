@@ -1,1 +1,65 @@
 /*以下にコードを記述*/
+/* 投稿カードのグリッドレイアウト */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+    gap: 20px; /* カード間の間隔 */
+    padding: 20px;
+    margin: auto;
+    max-width: 800px; /* 横幅制限 */
+}
+
+/* 投稿カード */
+.post-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px); /* ホバー時に少し浮かせる */
+}
+
+/* タイトル */
+.post-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* 投稿者と日付 */
+.post-meta {
+    font-size: 14px;
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination .active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}

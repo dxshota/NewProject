@@ -16,7 +16,7 @@ class Post extends Model
     protected $dates = ['deleted_at'];
     
     // 投稿に紐づくユーザー（多対1）
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

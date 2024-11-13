@@ -1,15 +1,27 @@
 <x-app-layout>
-@extends('layouts.app')
-
-@section('content')
-    @include('index') <!-- index.blade.phpのヘッダーを読み込む -->
-
-    <div class="container">
-        <div class="header-tabs">
-            <a href="/strategy">戦略</a>
-            <a href="/preset">プリセット</a>
-            <a href="/login">ログイン</a>
-        </div>
-@endsection
+    <!-- ヘッダー -->
+    <x-slot name="header">
+        @include('posts.header')
+    </x-slot>
+    
+    <div class="post-container">
         
+        
+        <!-- 投稿の表示エリア -->
+        <div class="posts-grid">
+            @foreach($posts as $post)
+                <div class="post-card" data-post-id="{{ $post->id }}">
+                    <h2 class="post-title">{{ $post->title }}</h2>
+                    <p class="post-meta">
+                        投稿者: {{ $post->user->name }} | 投稿日: {{ $post->created_at->format('Y年m月d日') }}
+                    </p>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- ページネーション -->
+        <div class="pagination">
+            {{ $posts->links() }}
+        </div>
+    </div>
 </x-app-layout>
