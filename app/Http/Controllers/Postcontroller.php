@@ -14,10 +14,19 @@ class Postcontroller extends Controller
 {
     public function index(Post $post)
     {
-        return view('posts.index')->with(['posts' => $post->get()]);  
-       //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(8);
+        
+        //dd($posts);
+        return view('posts.index')->with(['posts' => $posts]);
+         //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
+    public function list()
+    {
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(8);
+        return view('posts.post', compact('posts'));
+    }
+
     //テンプレート選手座標適用関数
     public function getFormationPositions($formationId)
     {
@@ -30,6 +39,9 @@ class Postcontroller extends Controller
     {
         // templatesテーブルからデータを取得
         $formations = Template::orderBy('id', 'asc')->pluck('formation_template_name', 'id');
+
+        // postsを最新順に8件ずつページネートし、userとのリレーションを読み込む
+        
 
         // データをビューに渡す
         return view('posts.index', compact('formations'));
@@ -62,8 +74,8 @@ class Postcontroller extends Controller
             $player->team_id = $position['team_id'];
             $player->player_position_x = $position['player_position_x'];
             $player->player_position_y = $position['player_position_y'];
-            $player->player_number = $position['player_number'] ?? null; // Nullable
-            $player->player_name = $position['player_name']?? null;      // Nullable
+            $player->player_number = $position['player_number']; // Nullable
+            $player->player_name = $position['player_name'];      // Nullable
             $player->save();
 
             $playerIds[] = $player->id;  // リレーションのためにplayer_idを保存
@@ -73,6 +85,27 @@ class Postcontroller extends Controller
         $post->players()->attach($playerIds);
 
         return response()->json(['success' => true]);
+    }
+
+    //投稿データ呼び出し
+    public function getPostPlayers($postId)
+    {
+        $post = Post::with('players')->find($postId);
+
+        if (!$post) {
+            return response()->json(['error' => 'Post not found'], 404);
+        }
+
+        $players = $post->players->map(function($player) {
+            return [
+                'player_number' => $player->player_number,
+                'player_name' => $player->player_name,
+                'player_position_x' => $player->player_position_x,
+                'player_position_y' => $player->player_position_y
+            ];
+        });
+
+        return response()->json(['players' => $players]);
     }
 
     /*

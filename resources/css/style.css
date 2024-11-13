@@ -170,11 +170,13 @@ main {
     border: none;
     background: transparent;
     text-align: center;
-    font-size: 16px;
+    font-size: 11px;
     color: black;
     width: 80px; /* テキストボックスの幅 */
+    font-weight: bold; /* 太字で表示 */
     margin-top: 5px;
     cursor: pointer;
+    white-space: nowrap; /* 改行を防ぐ */
 }
 
 .player input[type="text"]:focus {
@@ -212,6 +214,7 @@ main {
     font-size: 18px;
     text-align: center;
     border-right: none; /* 最後の要素に線を表示しない */
+
 }
 /*選手色をそれぞれ設定可能に*/
 
