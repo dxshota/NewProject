@@ -41,8 +41,8 @@ if(saveBtn){
 
             console.log(playerNumberElement);
 
-            const playerNumber = playerNumberElement ? playerNumberElement.textContent.trim() : null;
-            const playerName = playerNameElement ? playerNameElement.textContent.trim() : null;
+            const playerNumber = playerNumberElement ? playerNumberElement.value : null;
+            const playerName = playerNameElement ? playerNameElement.value : null;
 
             console.log(playerNumber);
             console.log(playerName);
@@ -51,7 +51,7 @@ if(saveBtn){
                 team_id: 1,
                 player_position_x: Number(playerX),
                 player_position_y: Number(playerY),
-                player_number: playerNumber || null,
+                player_number: Number(playerNumber) || null,
                 player_name: playerName || null
             });
         });
@@ -180,7 +180,7 @@ const container = document.querySelector('.container');
                     if (positions && positions.length > 0) {
                         positions.forEach((position, index) => {
                             
-                                const playerElement = document.querySelector(`.player[data-id="${index+1}"]`);
+                                const playerElement = document.querySelector(`.player[data-id="${index}"]`); //index->0から処理を始めないとバグる
         
                             console.log(playerElement);
                             if (playerElement) {
@@ -210,44 +210,14 @@ const container = document.querySelector('.container');
 //投稿情報呼び出し
 const postgrid = document.querySelector('.post-grid');
 document.querySelectorAll('.post-card').forEach(card => { //.post-cardクラスを持つ全ての要素を取得し、それぞれをcardとして処理
-    card.addEventListener('click', async (event) => {
-        console.log(event);
+    card.addEventListener('click', async () => {
 
         const postId = card.dataset.postId; // カードに設定された投稿IDを取得
-
-        console.log(postId);
+        
+        const getUrl = `/tactics/` + postId;
 
         try {
-            const response = await fetch(`/get-post-players/${event.currentTarget.dataset.postId}`); //fetch関数で/get-post-players/${postId}に非同期リクエストを送信し、投稿に紐づく選手情報を取得
-            const data = await response.json();
-            
-            console.log(data);
-            
-            // 取得した選手情報が存在する場合にのみ処理
-            if (data.players && data.players.length > 0) {
-                
-                // 選手情報をindex.blade.phpの要素に反映
-                data.players.forEach((player, index)  => {
-                    const playerElement = document.querySelector(`.player[data-id="${index + 1}"]`); //playerElmentがnull
-                
-                    console.log(playerElement);
-
-                //playerElementが見つからなかった場合は、このブロックをスキップ
-                    if (playerElement) {                                
-                        playerElement.dataset.x = player.player_position_x;
-                        playerElement.dataset.y = player.player_position_y;
-                        playerElement.querySelector('.player-number').textContent = player.player_number;
-                        playerElement.querySelector('.player-name').textContent = player.player_name;
-
-                    // CSSで位置を更新
-                        playerElement.style.transform = `translate(${player.player_position_x}px, ${player.player_position_y}px)`;
-                    }
-                });
-            
-                //window.location.href = '/tactics';
-            } else {
-                console.warn("選手情報が見つかりませんでした。");
-            }
+            window.location.href = getUrl;
         } catch (error) {
             console.error("選手情報の取得に失敗しました:", error);
         }
