@@ -7,7 +7,7 @@
         <!-- ヘッダーメニュー -->
         <nav class="header-nav">
             <ul>
-                <li><a href="{{ route('tactics.index') }}">[戦術]</a></li>
+                <li><a href="{{ route('tactics.redirect') }}">[戦術]</a></li>
                 <li><a href="{{ route('posts.list') }}" class="preset-button">[投稿]</a></li>
                 <li><a href="/profile">[プロファイル]</a></li>
                 <li><a href="#" id="logout-button">[ログアウト]</a></li>
