@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([
+        $this->call(
             TemplateSeeder::class,
             // Position_player_templatesSeeder::class,
-    ]);
+    );
     }
 }
