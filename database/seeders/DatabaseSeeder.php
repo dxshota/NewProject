@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(
             TemplateSeeder::class,
-            // Position_player_templatesSeeder::class,
+            Position_player_templatesSeeder::class
     );
     }
 }
+
