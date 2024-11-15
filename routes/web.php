@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::controller(PostController::class)->middleware(['auth'])->group(function(){ //認証なしユーザーの制限
+Route::middleware('auth')->group(function () {
     Route::get('/create', [PostController::class, 'create'])->name('posts.create');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit'); //プロファイル画面へのルート
     Route::get('/posts', [PostController::class, 'list'])->name('posts.list'); //投稿一覧画面遷移関数
@@ -37,8 +37,7 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     /*Route::post('/save-template', [PostController::class, 'saveTemplate'])->name('save.template'); //テンプレート座標保存関数（開発用）
     
     */
-});
-Route::middleware('auth')->group(function () {
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
