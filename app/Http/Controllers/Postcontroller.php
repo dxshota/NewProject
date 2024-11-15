@@ -48,6 +48,12 @@ class PostController extends Controller
         }
     }
     
+    //[戦術]を押すと新規作成画面を表示
+    public function create()
+    {
+        return view('posts.create'); // 新規作成画面を表示
+    }    
+    
     //すべての投稿を一覧表示
     public function list()
     {
