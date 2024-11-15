@@ -25,11 +25,5 @@ class TemplateSeeder extends Seeder
             'updated_at' => new DateTime(),
         
         ]);
-        DB::table('templates')->insert([
-            'formation_template_name' => "5-3-2",
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
-        
-        ]);
     }
 }
