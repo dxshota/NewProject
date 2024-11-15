@@ -53,7 +53,9 @@
             <div class="penalty-area penalty-area-right"></div>
 
         
-        
+        <!-- ボール -->
+        <div class="ball" data-x="596" data-y="309" style="transform: translate(596px, 309px);">
+        </div>
         <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
         
             

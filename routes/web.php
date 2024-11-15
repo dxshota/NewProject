@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){ //認証なしユーザーの制限
+    Route::get('/create', [PostController::class, 'create'])->name('posts.create');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit'); //プロファイル画面へのルート
     Route::get('/posts', [PostController::class, 'list'])->name('posts.list'); //投稿一覧画面遷移関数
     Route::get('/tactics', [PostController::class, 'redirectToLastTactics'])->name('tactics.redirect'); //投稿新規作成画面画面遷移関数

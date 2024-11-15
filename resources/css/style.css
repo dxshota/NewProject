@@ -148,6 +148,20 @@ main {
 
 }
 
+/* ボールデザイン */
+.ball {
+    position: absolute;
+    width: 45px; /* .player-circleと同じ大きさ */
+    height: 45px;
+    border-radius: 50%; /* 丸い形状 */
+    background-color: #f3a71b; /* 白い背景 */
+    border: 2px solid #666; /* 外枠の色 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 影を追加 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* プレイヤーデザイン */
 .player {
     position: absolute;

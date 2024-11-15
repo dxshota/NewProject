@@ -1,6 +1,7 @@
 import interact from 'interactjs'
 
 //ドラッグアンドドロップ機能
+//player
 interact('.player').draggable({
     listeners: {
         start(event) {
@@ -32,8 +33,8 @@ interact('.player').draggable({
         const distanceY = ((playerRect.top - centerRect.top)).toFixed(2);
 
         // 表示エリアに座標を表示
-        document.getElementById('dragCoordinatesDisplay').innerText = 
-            `X: ${Math.round(distanceX)} px, Y: ${Math.round(distanceY)} px `;
+        // document.getElementById('dragCoordinatesDisplay').innerText = 
+        //     `X: ${Math.round(distanceX)} px, Y: ${Math.round(distanceY)} px `;
         
         
         
@@ -42,6 +43,46 @@ interact('.player').draggable({
             player_position_x: parseFloat(distanceX),
             player_position_y: parseFloat(distanceY)
         });
+        },
+        end(event) {
+            // ドラッグ終了時に元に戻す
+            event.target.style.opacity = '1';
+        }
+    }
+});
+
+//ball
+interact('.ball').draggable({
+    listeners: {
+        start(event) {
+            // ドラッグ開始時にアイコンを変化させる（例: 透明度を下げる）
+            event.target.style.opacity = '0.6';
+        },
+        move(event) {
+            const target = event.target;
+
+            // 移動距離の計算
+            const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+            const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+            // 座標の適用
+            target.style.transform = `translate(${x}px, ${y}px)`;
+
+            // 座標を保存
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+
+            // 原点(center-dot)からの距離を計算（選手と同様）
+            const centerDot = document.querySelector('.soccer-field .center-dot');
+            const centerRect = centerDot.getBoundingClientRect();
+            const ballRect = target.getBoundingClientRect();
+
+            const distanceX = ((ballRect.left - centerRect.left)).toFixed(2);
+            const distanceY = ((ballRect.top - centerRect.top)).toFixed(2);
+
+            // 表示エリアに座標を表示
+            // document.getElementById('dragCoordinatesDisplay').innerText = 
+            //     `ボール - X: ${Math.round(distanceX)} px, Y: ${Math.round(distanceY)} px`;
         },
         end(event) {
             // ドラッグ終了時に元に戻す

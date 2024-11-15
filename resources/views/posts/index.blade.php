@@ -35,7 +35,7 @@
 </div>
 
 <!-- ドラッグ中の選手の座標を表示するエリア 開発用-->
-    <div id="dragCoordinatesDisplay" class="coordinates-display"></div>
+    <!-- <div id="dragCoordinatesDisplay" class="coordinates-display"></div> -->
     
     <div class="container">
         <!-- サッカーコート -->
@@ -52,9 +52,11 @@
             <div class="goal-area goal-area-right"></div>
             <div class="penalty-area penalty-area-right"></div>
 
+            <!-- ボール -->
+            <div class="ball" data-x="596" data-y="309" style="transform: translate(596px, 309px);">
+            </div>
         
-        
-        <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
+            <!-- プレイヤーはここに配置される（JSでドラッグ&ドロップ） -->
         
             <!-- チーム１ -->
             @foreach ($players as $index => $player)
