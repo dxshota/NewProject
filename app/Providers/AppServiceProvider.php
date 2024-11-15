@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        \URL::forceScheme('https');
         Paginator::useBootstrap();
         // templates テーブルからデータを取得し、全ビューで使用可能にする
         View::composer('*', function ($view) {
