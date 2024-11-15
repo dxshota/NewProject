@@ -89,7 +89,7 @@ if(presetBtn){
 //     });
 // }
 
-保存ボタン押下処理(開発用)
+//保存ボタン押下処理(開発用)
 document.getElementById('confirm-save').addEventListener('click',async function() {
     // タイトル欄の取得
     const titleInput = document.querySelector('#save-confirm-modal input[name="title"]');
