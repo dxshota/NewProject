@@ -79,45 +79,45 @@ class PostController extends Controller //C
     }
 
     //投稿データを保存する
-    // public function savePostData(Request $request) 
-    // {
-    //     //バリデーション
-    //     $request->validate([
-    //         'title' => 'required|string',
-    //         'positions' => 'required|array'
-    //     ]);
+    public function savePostData(Request $request) 
+    {
+        //バリデーション
+        $request->validate([
+            'title' => 'required|string',
+            'positions' => 'required|array'
+        ]);
 
-    //     // 認証ユーザーによる投稿データの保存を防ぐ
-    //     $userId = auth()->id();
-    //     if (!$userId) {
-    //         return response()->json(['error' => 'User not authenticated'], 401);
-    //     }
+        // 認証ユーザーによる投稿データの保存を防ぐ
+        $userId = auth()->id();
+        if (!$userId) {
+            return response()->json(['error' => 'User not authenticated'], 401);
+        }
 
-    //     //posts テーブルにタイトルを保存
-    //     $post = new Post();
-    //     $post->title = $request->input('title');
-    //     $post->user_id = $userId; // 認証ユーザーのIDを設定
-    //     $post->save();
+        //posts テーブルにタイトルを保存
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->user_id = $userId; // 認証ユーザーのIDを設定
+        $post->save();
 
-    //     //players テーブルに各選手のデータを保存
-    //     $playerIds = [];
-    //     foreach ($request->input('positions') as $position) {
-    //         $player = new Player();
-    //         $player->team_id = $position['team_id'];
-    //         $player->player_position_x = $position['player_position_x'];
-    //         $player->player_position_y = $position['player_position_y'];
-    //         $player->player_number = $position['player_number']; // Nullable
-    //         $player->player_name = $position['player_name'];      // Nullable
-    //         $player->save();
+        //players テーブルに各選手のデータを保存
+        $playerIds = [];
+        foreach ($request->input('positions') as $position) {
+            $player = new Player();
+            $player->team_id = $position['team_id'];
+            $player->player_position_x = $position['player_position_x'];
+            $player->player_position_y = $position['player_position_y'];
+            $player->player_number = $position['player_number']; // Nullable
+            $player->player_name = $position['player_name'];      // Nullable
+            $player->save();
 
-    //         $playerIds[] = $player->id;  // リレーションのためにplayer_idを保存
-    //     }
+            $playerIds[] = $player->id;  // リレーションのためにplayer_idを保存
+        }
 
-    //     //リレーションテーブルにpost_idとplayer_idを保存
-    //     $post->players()->attach($playerIds);
+        //リレーションテーブルにpost_idとplayer_idを保存
+        $post->players()->attach($playerIds);
 
-    //     return response()->json(['success' => true]);
-    // }
+        return response()->json(['success' => true]);
+    }
 
     //投稿データ呼び出し
     public function getPostPlayers($postId)
@@ -150,33 +150,33 @@ class PostController extends Controller //C
     }
     
     //テンプレート追加（開発用）
-    public function saveTemplate(Request $request)
-    {
-        // 保存ボタンバリデーション
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'positions' => 'required|array',
-            'positions.*.player_id' => 'required',
-            'positions.*.player_position_x' => 'required|numeric',
-            'positions.*.player_position_y' => 'required|numeric',
-        ]);
+    // public function saveTemplate(Request $request)
+    // {
+    //     // 保存ボタンバリデーション
+    //     $request->validate([
+    //         'title' => 'required|string|max:255',
+    //         'positions' => 'required|array',
+    //         'positions.*.player_id' => 'required',
+    //         'positions.*.player_position_x' => 'required|numeric',
+    //         'positions.*.player_position_y' => 'required|numeric',
+    //     ]);
 
-        // タイトルをtemplatesテーブルに保存
-        $template = new Template();
-        $template->formation_template_name = $request->title;
-        $template->save();
+    //     // タイトルをtemplatesテーブルに保存
+    //     $template = new Template();
+    //     $template->formation_template_name = $request->title;
+    //     $template->save();
 
-        // 選手座標をPosition_player_templatesテーブルに保存
-        foreach ($request->positions as $position) {
-            $playerPosition = new PpTemplate();
-            $playerPosition->template_id = $template->id;
-            $playerPosition->team_id = $position['team_id'];
-            $playerPosition->player_position_x = $position['player_position_x'];
-            $playerPosition->player_position_y = $position['player_position_y'];
-            $playerPosition->save();
-        }
+    //     // 選手座標をPosition_player_templatesテーブルに保存
+    //     foreach ($request->positions as $position) {
+    //         $playerPosition = new PpTemplate();
+    //         $playerPosition->template_id = $template->id;
+    //         $playerPosition->team_id = $position['team_id'];
+    //         $playerPosition->player_position_x = $position['player_position_x'];
+    //         $playerPosition->player_position_y = $position['player_position_y'];
+    //         $playerPosition->save();
+    //     }
 
-        return response()->json(['success' => true]);
-    }
+    //     return response()->json(['success' => true]);
+    // }
     
 }

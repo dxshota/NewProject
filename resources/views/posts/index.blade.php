@@ -5,16 +5,16 @@
     </x-slot>
     
 <!-- テンプレ選択コンテナ -->
-    <div class="formation-container">
+    <!-- <div class="formation-container">
         <h2>フォーメーション</h2>
         <ul class="formation-list">
-            @foreach($formations as $id => $formation_name) <!--formation_template_nameを一覧表示-->
+            @foreach($formations as $id => $formation_name) formation_template_nameを一覧表示
                 <li class="formation-item" id ={{$id}}>
                     {{ $formation_name }}
                 </li>
             @endforeach
         </ul>
-    </div>
+    </div> -->
 
 
 
