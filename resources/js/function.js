@@ -6,7 +6,7 @@ if(presetBtn){
         window.location.href = '/posts';
     });
 }
-//保存用モータル表示機能
+// 保存用モータル表示機能
 // const saveBtn = document.getElementById('save-btn');
 // if(saveBtn){
 //     saveBtn.addEventListener('click', function() {
@@ -90,7 +90,18 @@ if(presetBtn){
 // }
 
 //保存ボタン押下処理(開発用)
-document.getElementById('confirm-save').addEventListener('click',async function() {
+const saveBtn = document.getElementById('save-btn');
+if(saveBtn){
+    saveBtn.addEventListener('click', function() {
+        // モーダルを表示
+        document.getElementById('save-confirm-modal').style.display = 'block';
+    });
+    document.getElementById('cancel-save').addEventListener('click', function() {
+
+// モーダルを非表示
+    document.getElementById('save-confirm-modal').style.display = 'none';
+            });
+    document.getElementById('confirm-save').addEventListener('click',async function() {
     // タイトル欄の取得
     const titleInput = document.querySelector('#save-confirm-modal input[name="title"]');
 
@@ -156,7 +167,7 @@ document.getElementById('confirm-save').addEventListener('click',async function(
         alert('保存時にエラーが発生しました');
     });
 });
-
+}
 
 
 //テンプレート選手座標呼び出し関数
