@@ -18,17 +18,17 @@ class TemplateSeeder extends Seeder
             'updated_at' => now(),
             'deleted_at' => null
         ]);
-        DB::table('templates')->insert([
-            'formation_template_name' => "3-4-2-1",
-            'created_at' => now(),
-            'updated_at' => now(),
-            'deleted_at' => null
-        ]);
-        DB::table('templates')->insert([
-            'formation_template_name' => "5-3-2",
-            'created_at' => now(),
-            'updated_at' => now(),
-            'deleted_at' => null
-        ]);
+        // DB::table('templates')->insert([
+        //     'formation_template_name' => "3-4-2-1",
+        //     'created_at' => now(),
+        //     'updated_at' => now(),
+        //     'deleted_at' => null
+        // ]);
+        // DB::table('templates')->insert([
+        //     'formation_template_name' => "5-3-2",
+        //     'created_at' => now(),
+        //     'updated_at' => now(),
+        //     'deleted_at' => null
+        // ]);
     }
 }
