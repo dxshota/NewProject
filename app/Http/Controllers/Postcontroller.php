@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 
-class PostController extends Controller
+class PostController extends Controller //C
 {
     //ユーザーが最後にアクセスした「戦術（tactics）」ページへリダイレクト
     //setSessionPostId を使ってセッションに保存された「最後の投稿ID」を利用
