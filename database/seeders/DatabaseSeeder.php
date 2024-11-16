@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use database\Seeders\PositionPlayerTemplateSeeder as PPTSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(
             TemplateSeeder::class,
-            PositionPlayerTemplateSeeder::class
+            PPTSeeder::class
     );
     }
 }
