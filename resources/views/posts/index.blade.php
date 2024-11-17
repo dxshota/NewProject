@@ -20,8 +20,8 @@
 
     <!-- 保存ボタン -->
     <button id="save-btn" style="position: fixed; bottom: 10px; right: 10px;">保存</button>
-    
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!--csrf token-->
+    <meta name="csrf-token" content="{{ csrf_token() }}"> 
     <!-- 保存確認モーダル -->
     <div id="save-confirm-modal">
     <div class="modal-content">
