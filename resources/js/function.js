@@ -1,13 +1,5 @@
 //console.log("hello");
 
-
-/* const presetBtn = document.querySelector("preset-button");
-if(presetBtn){
-     document.querySelector('.preset-button').addEventListener('click', function() { //post.blade.php画面に遷移
-        window.location.href = '/posts';
-    });
-}*/
-
 //保存ボタン押下処理
 const saveBtn = document.getElementById('save-btn');
     //押下処理
@@ -117,66 +109,13 @@ const saveBtn = document.getElementById('save-btn');
         });
     }
 
-
-
-
-
-
-// テンプレート座標view適用
-
-const container = document.querySelector('.container');
-    window.addEventListener('DOMContentLoaded', () => {
-        const formationitems = document.querySelectorAll('.formation-item');
-
-        formationitems.forEach(formationitem => {
-        //console.log('formationitem', formationitem);
-        
-            formationitem.addEventListener('click', async (event)=>{
-                try {
-                    // サーバーからテンプレートIDに対応する位置情報を取得
-                    const response = await fetch(`/get-formation-positions/${event.target.id}`);
-                    const positions = await response.json();
-                    
-                    console.log(positions);
-                    
-                    // 位置データが存在する場合にのみ処理
-                    if (positions && positions.length > 0) {
-                        positions.forEach((position, index) => {
-                            
-                                const playerElement = document.querySelector(`.player[data-id="${index}"]`); //index->0から処理を始めないとバグる
-        
-                            console.log(playerElement);
-                            if (playerElement) {
-                                // data-x, data-y の更新
-                                playerElement.dataset.x = position.player_position_x;
-                                playerElement.dataset.y = position.player_position_y;
-        
-                                // CSS transform で位置を設定
-                                playerElement.style.transform = `translate(${position.player_position_x}px, ${position.player_position_y}px)`;
-
-                            }
-                            // プレイヤーのIDに対応するDOM要素を取得
-
-                            
-                        });
-                    } else {
-                        console.warn("指定されたフォーメーションの位置データが見つかりません。");
-                    }
-                } catch (error) {
-                    console.error("位置データの取得に失敗しました:", error);
-                }
-            })
-        }
-        )}
-    )
-
 //投稿情報呼び出し
 const postgrid = document.querySelector('.post-grid');
-document.querySelectorAll('.post-card').forEach(card => { //.post-cardクラスを持つ全ての要素を取得し、それぞれをcardとして処理
+//.post-cardクラスを持つ全ての要素を取得し、それぞれをcardとして処理
+document.querySelectorAll('.post-card').forEach(card => { 
     card.addEventListener('click', async () => {
-
-        const postId = card.dataset.postId; // カードに設定された投稿IDを取得
-        
+    // カードに設定された投稿IDを取得
+        const postId = card.dataset.postId;    
         const getUrl = `/tactics/` + postId;
 
         try {
@@ -186,6 +125,64 @@ document.querySelectorAll('.post-card').forEach(card => { //.post-cardクラス�
         }
     });
 });
+
+
+/* const presetBtn = document.querySelector("preset-button");
+if(presetBtn){
+     document.querySelector('.preset-button').addEventListener('click', function() { //post.blade.php画面に遷移
+        window.location.href = '/posts';
+    });
+}*/
+
+// テンプレート関連機能(開発中)
+//テンプレート座標view適用
+// const container = document.querySelector('.container');
+//     window.addEventListener('DOMContentLoaded', () => {
+//         const formationitems = document.querySelectorAll('.formation-item');
+
+//         formationitems.forEach(formationitem => {
+//         //console.log('formationitem', formationitem);
+        
+//             formationitem.addEventListener('click', async (event)=>{
+//                 try {
+//                     // サーバーからテンプレートIDに対応する位置情報を取得
+//                     const response = await fetch(`/get-formation-positions/${event.target.id}`);
+//                     const positions = await response.json();
+                    
+//                     console.log(positions);
+                    
+//                     // 位置データが存在する場合にのみ処理
+//                     if (positions && positions.length > 0) {
+//                         positions.forEach((position, index) => {
+                            
+//                                 const playerElement = document.querySelector(`.player[data-id="${index}"]`); //index->0から処理を始めないとバグる
+        
+//                             console.log(playerElement);
+//                             if (playerElement) {
+//                                 // data-x, data-y の更新
+//                                 playerElement.dataset.x = position.player_position_x;
+//                                 playerElement.dataset.y = position.player_position_y;
+        
+//                                 // CSS transform で位置を設定
+//                                 playerElement.style.transform = `translate(${position.player_position_x}px, ${position.player_position_y}px)`;
+
+//                             }
+//                             // プレイヤーのIDに対応するDOM要素を取得
+
+                            
+//                         });
+//                     } else {
+//                         console.warn("指定されたフォーメーションの位置データが見つかりません。");
+//                     }
+//                 } catch (error) {
+//                     console.error("位置データの取得に失敗しました:", error);
+//                 }
+//             })
+//         }
+//         )}
+//     )
+
+
 
 
 //保存ボタン押下処理(開発用)

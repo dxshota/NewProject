@@ -37,6 +37,7 @@
     color: #666;
 }
 
+/* ページネーションボタン */
 .pagination {
     display: flex;
     justify-content: center;

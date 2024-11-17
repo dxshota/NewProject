@@ -4,6 +4,7 @@ body {
     overflow: hidden; /* スクロール可能*/
 }
 
+/*containerを中央配置させるために設定*/
 main {
     display: flex;
     flex-direction: column;
@@ -17,18 +18,20 @@ main {
 }
 
 /* ドラッグ中の座標を表示するエリア 開発用*/
-#dragCoordinatesDisplay {
+/* #dragCoordinatesDisplay {
     position: fixed;
-    bottom: 10px; /* 画面の下部に配置 */
-    left: 10px;   /* 画面の左に配置 */
+    bottom: 10px; /* 画面の下部に配置 
+    left: 10px;   /* 画面の左に配置 
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;
     z-index: 1000;
-}
+} */
 
+
+/* soccer fieldの親要素 */
 .container {
     display: flex;
     flex-direction: column;
@@ -41,9 +44,10 @@ main {
     margin: 0;
 }
 
+/* フィールドデザイン */
 .soccer-field {
     width: 65vw;
-    height: 70vh;/* 横2:縦1のアスペクト比を維持 */
+    height: 70vh;
     background-color: #e6e6e6; /* コートカラー */
     position: relative;
     border: 5px solid rgb(36, 36, 36);
@@ -134,19 +138,19 @@ main {
     transform: translateX(-50%);
 }
 
-/* 交代選手スペース */
+/* 交代選手スペース 追加予定
 .substitute-area { 
-    width: 65vw; /* フィールドと同じ幅に設定 */
+    width: 65vw; /* フィールドと同じ幅に設定 
     height: 70px;
     display: flex;
     justify-content: space-around;
     padding: 10px;
     border: 2px dashed #444444;
     background-color: #f4f4f4;
-    margin-top: 5px; /* フィールド下に少し余白を追加 */
-    z-index: 0; /* 低い値を設定 */
+    margin-top: 5px;  フィールド下に少し余白を追加 
+    z-index: 0;  低い値を設定 
 
-}
+}*/
 
 /* ボールデザイン */
 .ball {
@@ -174,7 +178,8 @@ main {
     z-index: 500;
 }
 
-.player:active { /*ドラッグ中のアイコン*/
+/*ドラッグ中のアイコン*/
+.player:active { 
     cursor: grabbing;
     transform: scale(1.2); /* ドラッグ中にアイコンを拡大 */
     opacity: 0.6; /* ドラッグ中に透明度を下げる */
@@ -218,6 +223,7 @@ main {
     z-index: 10;
 }
 
+/* 選手名 */
 .player-info {
     display: flex;
     justify-content: center;
@@ -231,7 +237,6 @@ main {
     border-right: none; /* 最後の要素に線を表示しない */
 
 }
-/*選手色をそれぞれ設定可能に*/
 
 /* チーム1の選手 */
 .player-circle[data-id^="team1"] { /*アイコンの色*/
@@ -261,9 +266,10 @@ main {
     padding: 0;
 }
 
+/*ヘッダー項目間の空間*/
 .header-nav ul {
     display: flex;
-    gap: 80px; /*ヘッダー項目間の空間*/
+    gap: 80px; 
     list-style-type: none;
     padding: 0;
 }
@@ -272,6 +278,7 @@ main {
     display: inline;
 }
 
+/* ヘッダー要素 */
 .header-nav ul li a { /*文字カラー、フォントサイズ*/
     text-decoration: none;
     color: #3a3a3a; 
@@ -279,22 +286,22 @@ main {
     padding: 50px;
 }
 
-/*テンプレ選択コンテナ*/
-.formation-container {
+/*テンプレ選択コンテナ(開発中)*/
+/* .formation-container {
     position: fixed;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
     width: 120px;
-    height: 300px; /* スクロールできる高さを設定 */
+    height: 300px; スクロールできる高さを設定
     background-color: #ffffff;
     border: 1px solid #000;
     border-radius: 8px;
-    overflow-y: auto; /* 縦スクロールを可能にする */
+    overflow-y: auto; 縦スクロールを可能にする
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* 他の要素の上に表示 */
-}
+    z-index: 100; 他の要素の上に表示 
+} 
 
 .formation-container h2 {
     font-size: 16px;
@@ -318,6 +325,8 @@ main {
 .formation-item:hover {
     background-color: #f0f0f0;
 }
+*/
+
 
 /* 投稿保存ボタン */
 #save-btn {
